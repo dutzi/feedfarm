@@ -1,0 +1,201 @@
+@import '../../partials';
+
+.wrapper {
+  border-radius: 6px;
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  // transition: all 0.2s ease-out;
+  outline: none;
+  flex: 0 0 auto;
+  justify-content: center;
+  font-family: inherit;
+  box-shadow: 0px 0px 0px 2px black;
+
+  :global(.fa) {
+    font-size: 0.8em;
+    margin-inline-end: 9px;
+  }
+
+  &.sizeSm {
+    padding: 8px 10px;
+    font-size: var(--font-size-md);
+  }
+  &.sizeMd {
+    padding: 10px 30px;
+    font-size: var(--font-size-md);
+  }
+  &.sizeLg {
+    padding: 10px 80px;
+
+    @include mobile {
+      padding: 10px 20px;
+    }
+  }
+
+  &.colorPrimary {
+    background: var(--feedfarm-cyan);
+    color: black;
+
+    &:focus-visible {
+      box-shadow: var(--focus-rect-cyan);
+    }
+  }
+
+  &.colorSecondary {
+    background: var(--bg-color-muted);
+    border: 1px solid var(--bg-color-x-muted);
+    color: var(--text-color-default);
+
+    &:focus-visible {
+      box-shadow: var(--focus-rect);
+    }
+  }
+
+  &.colorGhost {
+    background: none;
+    border: 1px solid var(--post-type-button-color);
+    color: var(--post-type-button-color);
+
+    &:focus,
+    &:hover {
+      background: var(--post-type-button-bg);
+    }
+  }
+
+  &.colorGhostMuted {
+    background: none;
+    border: 1px solid #c1c1c1;
+    color: var(--text-color-default);
+
+    &:focus-visible {
+      box-shadow: var(--focus-rect);
+    }
+  }
+
+  &.colorLink {
+    background: none;
+    border: none;
+    color: var(--text-color-default);
+    padding: 0px;
+    border-radius: 0px;
+
+    &:focus-visible {
+      box-shadow: none;
+      border-bottom: 2px solid var(--feedfarm-primary);
+      color: var(--feedfarm-primary);
+    }
+  }
+
+  &.fullWidth {
+    display: block;
+    width: 100%;
+  }
+
+  &.noLabel {
+    padding: 10px;
+    :global(.fa) {
+      margin-inline-end: 0px;
+    }
+  }
+
+  .spinnerWrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+  }
+
+  &.highlightIcon {
+    i {
+      color: var(--feedfarm-primary);
+    }
+  }
+
+  &.showSpinner {
+    color: transparent;
+    i {
+      color: transparent;
+    }
+    .newBadge {
+      opacity: 0;
+    }
+  }
+
+  &.alignStart {
+    text-align-last: start;
+  }
+
+  &.disabled {
+    background: var(--bg-color-x-muted);
+    border-color: var(--bg-color-x-muted);
+    cursor: default;
+  }
+
+  &.rounded {
+    border-radius: 100px;
+  }
+
+  &.minimizeOnMobile {
+    @include mobile {
+      .label {
+        display: none;
+      }
+
+      :global(.fa) {
+        margin-inline-end: 0px;
+      }
+    }
+  }
+
+  .newBadge {
+    font-size: 0.8em;
+    padding: 3px 6px;
+    border-radius: 5px;
+    margin-inline-start: 12px;
+    margin-top: -3px;
+    margin-bottom: -3px;
+    text-transform: uppercase;
+    background: #0000004a;
+    color: #ffffff8c;
+  }
+
+  .newBadgeTiny {
+    position: absolute;
+    top: -10px;
+    inset-inline-end: -8px;
+    background: #424242;
+    font-size: 0.6em;
+    padding: 2px 5px 2px;
+    border-radius: 6px;
+    border: 1px solid #b5b5b54d;
+    text-transform: uppercase;
+    color: var(--text-color-muted);
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    .newBadge,
+    .newBadgeTiny {
+      background: var(--feedfarm-primary);
+      color: var(--text-color-default);
+    }
+  }
+
+  .uploadFileButton {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    -webkit-appearance: none;
+    opacity: 0;
+    cursor: pointer;
+  }
+}

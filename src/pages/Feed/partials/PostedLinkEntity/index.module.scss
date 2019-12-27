@@ -1,0 +1,68 @@
+@import '../../../../partials';
+
+.wrapper {
+  margin-bottom: 15px;
+
+  &:not(.noExtract) {
+    line-height: 0px;
+  }
+
+  &.noExtract {
+    a {
+      margin-top: 12px;
+    }
+  }
+
+  a {
+    display: block;
+    transform-origin: 0px 0px;
+    transition: all 0.4s ease-out;
+  }
+
+  @include rtl {
+    a {
+      transform-origin: 100% 0px;
+    }
+  }
+
+  &.sticky {
+    position: sticky;
+    top: 76px;
+  }
+
+  .entity {
+    width: 100%;
+    border: 2px solid var(--post-entity-border-color);
+    transition: all 0.4s ease-out;
+    object-fit: cover;
+  }
+
+  &.isSticky {
+    pointer-events: none;
+
+    .entity {
+      border: 4px solid black;
+      pointer-events: all;
+    }
+
+    a {
+      transform: translateX(calc(100% + 30px)) scale(0.5);
+    }
+
+    @include rtl {
+      a {
+        transform: translateX(calc(-100% - 30px)) scale(0.5);
+      }
+    }
+
+    a:hover {
+      transform: translateX(calc(100% + 30px)) scale(1);
+    }
+
+    @include rtl {
+      a:hover {
+        transform: translateX(calc(-100% - 30px)) scale(1);
+      }
+    }
+  }
+}

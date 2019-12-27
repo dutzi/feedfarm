@@ -1,0 +1,107 @@
+@import '../../../../partials';
+
+$postTypeButtonHeight: 140px;
+
+.wrapper {
+  width: 600px;
+
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto 1fr;
+  margin-bottom: 12px;
+
+  @include mobile {
+    grid-template-columns: auto;
+  }
+
+  .userPhoto {
+    // border: 2px solid #333;
+    // box-shadow: 0px 0px 2px black;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: var(--floater-border);
+    box-shadow: var(--floater-box-shadow);
+  }
+
+  @include mobile {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .formWrapper {
+    padding: var(--post-padding);
+    border-radius: var(--post-border-radius);
+    background: var(--post-bg);
+    // border: 2px solid #000000;
+    // box-shadow: 0px 0px 23px #0000004f;
+    margin-inline-start: 12px;
+    position: relative;
+    border: var(--floater-border);
+    box-shadow: var(--floater-box-shadow);
+    box-sizing: content-box;
+
+    @include mobile {
+      margin-inline-start: 0px;
+    }
+
+    .triangle {
+      position: absolute;
+      left: 0px;
+      top: 10px;
+      transform: translateX(-100%);
+
+      @include rtl {
+        left: initial;
+        right: 0px;
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  .title {
+    font-size: 1.2em;
+    padding: 4px 0px 12px;
+  }
+
+  .postTypeSelector {
+    display: grid;
+    height: $postTypeButtonHeight;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+
+    &.twoLines {
+      height: $postTypeButtonHeight * 2;
+    }
+
+    @include mobile {
+      height: 270px;
+    }
+
+    .postTypeButton {
+      background: var(--post-type-button-bg);
+      border: none;
+      font-size: 2.5em;
+      color: var(--post-type-button-color);
+      border: 2px solid var(--post-type-button-color);
+      outline: none;
+      font-family: inherit;
+      box-shadow: 0px 0px 0px 2px black;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0px 0px 63px -10px var(--feedfarm-cyan) inset,
+          0px 0px 0px 2px black;
+      }
+
+      &:active {
+        transform: translateY(2px);
+      }
+
+      .label {
+        font-size: 0.4em;
+        margin-top: 12px;
+      }
+    }
+  }
+}

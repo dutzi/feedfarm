@@ -1,0 +1,62 @@
+@import '../../../../partials';
+.wrapper {
+  display: flex;
+  padding-top: 10px;
+  padding-inline-start: 10px;
+  border-top: 2px solid var(--separator-color);
+  margin-top: 10px;
+
+  // margin: 10px -10px -10px;
+  // padding: 10px 10px;
+  // background: #ffffff17;
+
+  .userPhoto {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border: 2px solid #2a2b29;
+    margin-top: 3px;
+    flex: 0 0 40px;
+  }
+
+  .triangle {
+    position: absolute;
+    margin-top: 6px;
+    margin-inline-start: -15px;
+    top: 0px;
+  }
+
+  .textareaWrapper {
+    flex: 1 1 auto;
+    margin-inline-start: 13px;
+    position: relative;
+    line-height: 0px;
+  }
+
+  .textarea {
+    resize: vertical;
+    width: 100%;
+    border: 2px solid var(--comment-editor-border-color);
+    background: var(--comment-editor-bg-color);
+    font-size: inherit;
+    font-family: inherit;
+    min-height: 20px;
+    padding: 10px;
+    color: white;
+    outline: none;
+    min-height: 66px;
+    box-shadow: var(--input-box-shadow);
+
+    &::placeholder {
+      color: var(--comment-placeholder-color);
+    }
+
+    &:focus {
+      border: 2px solid var(--feedfarm-primary);
+    }
+
+    &[disabled] {
+      color: var(--text-color-muted);
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import '../../partials';
+
+.wrapper {
+  @include elevated-box;
+  padding: 24px;
+
+  @include mobile {
+    opacity: 1;
+  }
+
+  p {
+    max-width: 600px;
+    line-height: 1.8em;
+  }
+
+  .form {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    .formField {
+      margin-bottom: 12px;
+    }
+  }
+}

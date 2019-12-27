@@ -1,0 +1,23 @@
+.emptyState {
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 8em;
+  max-width: 650px;
+  margin: 8em auto;
+
+  .emoji {
+    display: block;
+    font-size: 2em;
+  }
+
+  .title {
+    font-size: 1.7em;
+    line-height: 1.7em;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+
+  .body {
+    opacity: 0.7;
+  }
+}

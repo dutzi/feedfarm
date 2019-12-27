@@ -1,0 +1,69 @@
+@import '../../../../partials';
+
+.wrapper {
+  margin-bottom: 24px;
+
+  .content {
+    display: inline-grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px;
+    width: 600px;
+    position: relative;
+
+    @include mobile {
+      max-width: 600px;
+      width: 100%;
+      grid-template-columns: auto;
+    }
+
+    .userPhoto {
+      border: 2px solid #252525;
+      box-shadow: 0px 0px 2px black;
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+    }
+
+    .postTypeIndicator {
+      margin-top: 12px;
+      font-size: 1.5em;
+      width: 100%;
+      text-align: center;
+      color: var(--post-type-indicator-color);
+    }
+
+    .post {
+      padding: var(--post-padding);
+      background: var(--post-bg);
+      // border: 2px solid black;
+      border: var(--floater-border);
+      box-shadow: var(--floater-box-shadow);
+      margin-inline-start: 12px;
+      position: relative;
+      min-width: 0px;
+      border-radius: var(--post-border-radius);
+
+      > div:last-child {
+        margin-bottom: 0px;
+      }
+
+      @include mobile {
+        margin-inline-start: 0px;
+      }
+    }
+
+    a {
+      color: var(--text-color-amplified);
+      text-decoration: none;
+    }
+  }
+
+  .contextMenu {
+    position: absolute;
+    opacity: 0;
+    right: 0px;
+    transform-origin: 10px 10px;
+    transform: translateX(80%) translateY(10px) rotate(90deg);
+    pointer-events: none;
+  }
+}

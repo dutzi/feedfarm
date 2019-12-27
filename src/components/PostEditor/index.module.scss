@@ -1,0 +1,48 @@
+.wrapper {
+  padding-top: 5px;
+
+  .formField {
+    .stepIndicator {
+      font-size: 2em;
+      margin-inline-end: 9px;
+      // font-weight: bold;
+      display: inline;
+    }
+
+    .subscriptLabel {
+      display: inline-flex;
+      width: 18px;
+      height: 18px;
+      background: #0000006b;
+      border-radius: 100%;
+      justify-content: center;
+      font-size: 0.6em;
+      align-items: center;
+    }
+  }
+
+  .formFieldFlex {
+    display: flex;
+    align-items: baseline;
+
+    .flex1 {
+      flex: 1;
+    }
+  }
+
+  .actionButtons {
+    display: flex;
+  }
+
+  .errorMessage {
+    background: var(--color-red);
+    padding: 10px;
+    border-radius: var(--border-radius-md);
+    margin-top: 30px;
+    max-width: 464px;
+
+    a {
+      color: inherit;
+    }
+  }
+}

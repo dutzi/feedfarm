@@ -1,0 +1,36 @@
+@import '../../partials';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 2px solid #2a2b29;
+  line-height: 0px;
+
+  &.size-sm {
+    width: 34px;
+    height: 34px;
+  }
+
+  &.size-md {
+    width: 40px;
+    height: 40px;
+  }
+
+  &.size-lg {
+    width: 50px;
+    height: 50px;
+  }
+
+  &.size-x-lg {
+    width: 80px;
+    height: 80px;
+  }
+
+  > span {
+    // outline: 10px solid;
+    // outline-offset: -12px;
+    transition: outline 1s;
+  }
+}

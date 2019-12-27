@@ -1,0 +1,102 @@
+[
+  {
+    "name": "--feedfarm-primary",
+    "value": "#2a2c31"
+  },
+  {
+    "name": "--feedfarm-cyan",
+    "value": "#3e4147"
+  },
+  {
+    "name": "--page-bg",
+    "value": "#3e4147"
+  },
+  {
+    "name": "--page-bg-primary",
+    "value": "#fffedf"
+  },
+  {
+    "name": "--post-bg",
+    "value": "#fffedf"
+  },
+  {
+    "name": "--post-border-color",
+    "value": "#2a2c31"
+  },
+  {
+    "name": "--post-entity-border-color",
+    "value": "#fffedf"
+  },
+  {
+    "name": "--post-type-button-bg",
+    "value": "#3e4147"
+  },
+  {
+    "name": "--post-type-button-color",
+    "value": "#fffedf"
+  },
+  {
+    "name": "--text-color-amplified",
+    "value": "#dfba69"
+  },
+  {
+    "name": "--text-color-default",
+    "value": "#5a2e2e"
+  },
+  {
+    "name": "--text-color-muted",
+    "value": "#2a2c31"
+  },
+  {
+    "name": "--post-type-indicator-color",
+    "value": "#2a2c31"
+  },
+  {
+    "name": "--comment-editor-border-color",
+    "value": "#dfba69"
+  },
+  {
+    "name": "--comment-editor-bg-color",
+    "value": "#3e4147"
+  },
+  {
+    "name": "--comment-placeholder-color",
+    "value": "#dfba69"
+  },
+  {
+    "name": "--input-placeholder-color",
+    "value": "#fffedf"
+  },
+  {
+    "name": "--separator-color",
+    "value": "#2a2c31"
+  },
+  {
+    "name": "--footer-color",
+    "value": "#fffedf"
+  },
+  {
+    "name": "--context-menu-color",
+    "value": "#2a2c31"
+  },
+  {
+    "name": "--context-menu-label-color",
+    "value": "#fffedf"
+  },
+  {
+    "name": "--context-menu-highlight-color",
+    "value": "#2a2c31"
+  },
+  {
+    "name": "--emoji-selected-color",
+    "value": "#2a2c31"
+  },
+  {
+    "name": "--poll-answer-bg-color",
+    "value": "#5a2e2e"
+  },
+  {
+    "name": "--contrasting-bg",
+    "value": "#fffedf"
+  }
+]

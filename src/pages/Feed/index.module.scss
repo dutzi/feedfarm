@@ -1,0 +1,14 @@
+@import '../../partials';
+
+.wrapper {
+  // line-height: 1.5;
+  @include clear-panel;
+  background: none;
+  border: none;
+  color: var(--text-color-default);
+  max-width: 904px;
+
+  @include mobile {
+    width: 100vw;
+  }
+}

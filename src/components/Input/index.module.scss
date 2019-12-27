@@ -1,0 +1,85 @@
+@import '../../partials';
+
+.input {
+  background: #0000006b;
+  border: none;
+  padding: 10px;
+  font-size: var(--font-size-lg);
+  color: var(--text-color-default);
+  width: 300px;
+  -webkit-appearance: none;
+  border-radius: var(--border-radius-md);
+  position: relative;
+  z-index: 1;
+  border: 2px solid black;
+  box-shadow: var(--input-box-shadow);
+
+  &::placeholder {
+    color: var(--input-placeholder-color);
+  }
+
+  &.variant-owner-tools {
+    color: #000000;
+    background: #0000002e;
+
+    &::placeholder {
+      color: #8c8c8c;
+    }
+  }
+
+  &.md {
+    width: 170px;
+    font-size: var(--font-size-md);
+    padding: 6px;
+
+    @include mobile {
+      width: 100px;
+    }
+  }
+
+  &.fullWidth {
+    width: 100%;
+    flex: 1;
+  }
+
+  &.disabled {
+    color: #656565;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: var(--focus-rect);
+  }
+
+  &.rtl {
+    direction: rtl;
+  }
+}
+
+.inputWrapper {
+  border-radius: var(--border-radius-md);
+  flex: 1;
+}
+
+.wrapper {
+  position: relative;
+
+  .copyButton {
+    position: absolute;
+    top: 8px;
+    padding: 0px 20px;
+    background: none;
+    bottom: 8px;
+    inset-inline-end: 0px;
+    border: none;
+    font-family: inherit;
+    color: inherit;
+    font-size: 1em;
+    border-inline-start: 2px solid var(--border-color);
+    outline: none;
+
+    &:focus-visible {
+      color: var(--feedfarm-primary);
+    }
+  }
+}

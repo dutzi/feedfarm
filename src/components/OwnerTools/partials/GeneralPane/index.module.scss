@@ -1,0 +1,13 @@
+@import '../../../../partials';
+@import '../../partials';
+
+.wrapper {
+  background: white;
+
+  .paneTitle {
+    background-color: $generalColor;
+  }
+
+  .deleteFeed {
+  }
+}

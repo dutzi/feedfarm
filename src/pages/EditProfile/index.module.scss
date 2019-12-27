@@ -1,0 +1,103 @@
+@import '../../partials';
+
+.wrapper {
+  line-height: 1.5em;
+
+  &:not(.edit) {
+    @include clear-panel;
+  }
+
+  p {
+    max-width: 600px;
+    line-height: 1.8em;
+  }
+
+  .privacyWarning {
+    max-width: 480px;
+    margin-bottom: 22px;
+    line-height: 1.5;
+    font-size: 0.95em;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+
+    .formField {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: baseline;
+
+      &.userPhoto {
+        align-items: start;
+      }
+
+      @include mobile {
+        flex-direction: column;
+      }
+    }
+
+    .disclaimer {
+      margin-top: 9px;
+      font-size: 0.9em;
+    }
+
+    .photosFormField {
+      margin-bottom: 12px;
+      display: flex;
+
+      @include mobile {
+        flex-direction: column;
+      }
+    }
+
+    .marginatedText {
+      margin-inline-start: 202px;
+
+      @include mobile {
+        margin-inline-start: 0px;
+      }
+    }
+
+    .locationName {
+      margin-top: 15px;
+    }
+
+    .locationPreview {
+      width: 316px;
+      display: block;
+      margin-top: 12px;
+    }
+
+    .flex {
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .formSubmit {
+      align-self: flex-end;
+      background: white;
+      padding: 10px 30px;
+      border-radius: 6px;
+      font-size: var(--font-size-md);
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      display: inline-block;
+      border: none;
+
+      &:focus {
+        outline: none;
+        box-shadow: var(--focus-rect);
+      }
+    }
+  }
+
+  .error {
+    color: #f44336;
+    margin: 10px 0px;
+  }
+}

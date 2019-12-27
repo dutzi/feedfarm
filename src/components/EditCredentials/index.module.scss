@@ -1,0 +1,26 @@
+@import '../../partials';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .formField {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 12px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  .error {
+    color: var(--color-red);
+    // todo fix this
+    max-width: 470px;
+
+    &:not(:empty) {
+      margin-bottom: 12px;
+    }
+  }
+}

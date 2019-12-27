@@ -1,0 +1,241 @@
+@import '../../partials';
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  padding: 10px 30px;
+  background: var(--bg-color-amplified);
+  transition: background 0.4s ease-out;
+  border-bottom: var(--floater-border);
+
+  @include mobile {
+    position: fixed;
+    top: 0px;
+    padding: 12px 20px;
+    background: #3c3c3c;
+    margin: 0px;
+    left: 0px;
+    right: 0px;
+    border-bottom: 2px solid var(--feedfarm-primary);
+    z-index: 2;
+  }
+
+  .rightSideButtons {
+    display: grid;
+    // grid-template-columns: repeat(3, auto);
+    align-items: center;
+    grid-column-gap: 10px;
+
+    @include mobile {
+      grid-template-columns: auto auto auto;
+    }
+
+    .username {
+      font-size: 0.9em;
+    }
+
+    .rightSideButton {
+      color: var(--text-color-default);
+      line-height: 0px;
+      border-radius: var(--border-radius-sm);
+      width: 34px;
+      height: 34px;
+      outline: none;
+      display: inline-flex;
+      text-decoration: none;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        height: 0px;
+        background: var(--feedfarm-primary);
+        left: -5px;
+        right: -5px;
+        transition: all 0.2s ease-out;
+      }
+
+      &:hover,
+      &:focus-visible {
+        &:after {
+          height: 6px;
+        }
+      }
+
+      &.active {
+        color: var(--feedfarm-primary);
+      }
+
+      &.showBadge {
+        &:before {
+          content: '';
+          position: absolute;
+          top: 6px;
+          right: 5px;
+          width: 8px;
+          height: 8px;
+          background: var(--color-red);
+          border-radius: 100%;
+        }
+      }
+
+      &.rounded {
+        border-radius: 100%;
+      }
+
+      img {
+        width: 100%;
+        border: 2px solid black;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .userMenu {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      grid-gap: 10px;
+      align-items: center;
+      border-inline-start: 2px solid var(--bg-color);
+      padding-inline-start: 16px;
+    }
+  }
+
+  .closeButton {
+    @include closeButton;
+  }
+
+  ul {
+    list-style: none;
+    margin: 5px 0px;
+    padding: 0px;
+
+    .navItem {
+      display: inline-block;
+      margin-inline-end: 18px;
+      position: relative;
+
+      @include mobile {
+        display: block;
+      }
+
+      a {
+        color: var(--text-color-default);
+        text-decoration: none;
+        display: inline-block;
+        padding: 20px 10px;
+        margin: -20px -10px;
+        position: relative;
+        outline: none;
+
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 4px;
+          height: 0px;
+          background: var(--feedfarm-primary);
+          width: calc(100% - 20px);
+          transition: all 0.2s ease-out;
+        }
+
+        &:hover,
+        &:focus-visible {
+          &:before {
+            height: 6px;
+          }
+        }
+
+        @include mobile {
+          display: block;
+        }
+      }
+
+      &.selected {
+        a {
+          color: var(--feedfarm-primary);
+        }
+      }
+    }
+  }
+}
+
+.mobileNav {
+  display: flex;
+  justify-content: space-between;
+
+  .buttonWrapper {
+    position: relative;
+    display: flex;
+  }
+
+  .menuButton {
+    background: none;
+    border: none;
+    color: var(--text-color-muted);
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  .backdrop {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: #00000044;
+    z-index: 1;
+  }
+
+  @mixin badge {
+    position: absolute;
+    background: #f44336;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .badge {
+    @include badge;
+  }
+
+  .navItemBadge {
+    @include badge;
+    left: -14px;
+  }
+
+  .rightSideButton {
+    color: var(--text-color-default);
+  }
+}
+
+.premiumBadge {
+  position: absolute;
+  font-size: 0.5em;
+  background: #ffffffad;
+  border-radius: 100%;
+  width: 19px;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset-inline-end: -4px;
+  bottom: -4px;
+  color: var(--feedfarm-primary);
+  box-shadow: 0px 0px 3px black;
+  pointer-events: none;
+
+  @include mobile {
+    bottom: 8px;
+  }
+}

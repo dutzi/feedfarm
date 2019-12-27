@@ -1,0 +1,16 @@
+@import '../../../../partials';
+@import '../../partials';
+
+.wrapper {
+  background: white;
+  font-weight: 400;
+
+  .paneTitle {
+    background-color: $rulesColor;
+  }
+
+  .selectLabel {
+    font-weight: 600;
+    margin: 18px 0px 6px;
+  }
+}

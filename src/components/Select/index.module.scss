@@ -1,0 +1,49 @@
+.wrapper {
+  background: var(--bg-color-muted);
+  padding: 10px;
+  font-size: var(--font-size-lg);
+  border-radius: var(--border-radius-md);
+  color: var(--text-color-default);
+  width: 300px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid var(--border-color);
+  box-shadow: var(--input-box-shadow);
+  flex: 1;
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &.variant-owner-tools {
+    i {
+      color: black;
+    }
+  }
+
+  &.focused {
+    box-shadow: var(--focus-rect);
+  }
+
+  .selectedOptionLabel {
+    flex: 1;
+  }
+
+  > i {
+    z-index: 1;
+  }
+
+  .actualSelect {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    font-size: 1em;
+    -webkit-appearance: none;
+    opacity: 0;
+    padding: 0px 10px;
+  }
+}

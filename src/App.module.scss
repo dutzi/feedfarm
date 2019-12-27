@@ -1,0 +1,34 @@
+@import './partials';
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.darkBg {
+  background: var(--bg-color);
+}
+
+.content {
+}
+
+.redBox {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border: 4px solid red;
+  pointer-events: none;
+
+  .timesButton {
+    @include times-button;
+
+    pointer-events: all;
+  }
+}

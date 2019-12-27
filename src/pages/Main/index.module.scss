@@ -1,0 +1,19 @@
+@import '../../partials';
+
+.wrapper {
+  @include elevated-box;
+  padding: 24px;
+
+  @include mobile {
+    padding-top: 12px;
+  }
+
+  .maxWidth {
+    max-width: calc(100vw - 48px);
+    margin: auto;
+  }
+
+  .center {
+    text-align: center;
+  }
+}

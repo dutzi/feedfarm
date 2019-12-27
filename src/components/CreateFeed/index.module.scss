@@ -1,0 +1,26 @@
+@import '../../partials';
+
+.wrapper {
+  .paragraph {
+    line-height: 1.8em;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feedLink {
+    color: var(--feedfarm-primary);
+    align-self: center;
+    text-decoration: none;
+  }
+
+  .signupForm {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .error {
+    text-align: center;
+    color: #f44336;
+    margin-top: 12px;
+  }
+}

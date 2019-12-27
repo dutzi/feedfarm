@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@feedfarm-shared/*": ["./functions/src/feedfarm-shared/*"]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@import '../../partials';
+
+.wrapper {
+  line-height: 1.5;
+  max-width: 1024px;
+  width: calc(100vw - 30px);
+  margin: auto;
+  @include clear-panel;
+  color: white;
+  direction: ltr;
+
+  .pre {
+    font-size: 0.8em;
+    font-family: menlo;
+    background: #313131;
+    padding: 10px;
+    white-space: pre-wrap;
+  }
+
+  .metadata {
+    margin-bottom: 12px;
+    background: black;
+    position: sticky;
+    top: 0px;
+
+    a {
+      color: var(--feedfarm-primary);
+    }
+  }
+
+  .textarea {
+    width: 100%;
+    height: 130px;
+    font-size: inherit;
+    font-family: menlo;
+    background: rgb(32, 32, 32);
+    color: white;
+    padding: 10px;
+    resize: vertical;
+    margin-bottom: 12px;
+    border: none;
+
+    &:focus {
+      outline: 3px solid var(--feedfarm-primary);
+    }
+  }
+
+  &.error {
+    .textarea,
+    .textarea:focus {
+      outline: 3px solid red;
+    }
+  }
+
+  .highlight {
+    background: var(--feedfarm-primary);
+  }
+}

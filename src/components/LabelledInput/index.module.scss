@@ -1,0 +1,17 @@
+@import '../../partials';
+
+.wrapper {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+
+  &.variant-owner-tools {
+    display: grid;
+    grid-gap: 6px;
+    font-weight: normal;
+  }
+
+  @include mobile {
+    flex-direction: column;
+  }
+}

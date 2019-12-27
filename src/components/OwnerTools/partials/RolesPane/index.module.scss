@@ -1,0 +1,101 @@
+@import '../../../../partials';
+@import '../../partials';
+
+$list-item-start-margin: 24px;
+
+.wrapper {
+  background: white;
+
+  .paneTitle {
+    background-color: $rolesColor;
+  }
+
+  &.expanded {
+    .groupsWrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 10px;
+
+      .usersGroup {
+        &:not(:first-child) {
+          border-top: none;
+          padding-top: 0px;
+          border-inline-start: 1px solid black;
+          padding-inline-start: 10px;
+        }
+      }
+    }
+  }
+
+  .usersGroup {
+    &:not(:first-child) {
+      border-top: 1px solid black;
+      padding-top: 12px;
+    }
+
+    .title {
+      margin-bottom: 12px;
+    }
+
+    .usersEmptyState {
+      margin-inline-start: $list-item-start-margin;
+      color: #0b2235;
+      font-weight: normal;
+    }
+  }
+
+  .infoTip {
+    background: #00bcd466;
+    border: 2px solid black;
+    padding: 9px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+
+    > i {
+      margin-inline-start: 10px;
+    }
+
+    .text {
+      font-weight: normal;
+      font-size: 0.8em;
+      margin-inline-start: 14px;
+    }
+  }
+
+  .user {
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    grid-gap: 10px;
+    margin-bottom: 6px;
+    margin-inline-start: $list-item-start-margin;
+    font-weight: normal;
+
+    .username {
+      min-width: 0px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .removeButton {
+      @include reset-button;
+    }
+  }
+
+  .addUser {
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    grid-gap: 10px;
+    margin: 12px 0px;
+    margin-inline-start: $list-item-start-margin;
+
+    .addButton {
+      @include reset-button;
+    }
+  }
+
+  .toggleExpandButton {
+    @include reset-button;
+    float: inline-end;
+  }
+}

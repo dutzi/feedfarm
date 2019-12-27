@@ -1,0 +1,51 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  // grid-template-rows: 77px;
+  grid-column-gap: 10px;
+  width: 100%;
+  position: relative;
+
+  .photo {
+    line-height: 0px;
+
+    // img {
+    //   width: 100%;
+    //   height: 100%;
+    //   object-fit: cover;
+    // }
+  }
+
+  .missingPhoto {
+    border: 1px solid #5e5e5e;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4c4c4c;
+
+    .missingPhotoRatio {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .lockedBadge {
+    position: absolute;
+    right: -5px;
+    bottom: -4px;
+    background: #3c3c3c;
+    font-size: 0.6em;
+    padding: 6px 10px 6px 8px;
+    border-radius: 6px;
+    border: 1px solid #ffffff2e;
+    pointer-events: none;
+
+    i {
+      margin-inline-start: 6px;
+    }
+  }
+}

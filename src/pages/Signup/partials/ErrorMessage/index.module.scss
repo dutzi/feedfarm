@@ -1,0 +1,10 @@
+.wrapper {
+  background: var(--color-red);
+  padding: 10px;
+  border-radius: var(--border-radius-md);
+  margin-top: 30px;
+
+  a {
+    color: inherit;
+  }
+}

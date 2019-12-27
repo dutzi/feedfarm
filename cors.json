@@ -1,0 +1,7 @@
+[
+  {
+    "origin": ["http://localhost:3001", "https://feed.farm"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  }
+]

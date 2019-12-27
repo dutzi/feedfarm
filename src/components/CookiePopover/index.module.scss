@@ -1,0 +1,30 @@
+@import '../../partials';
+
+.wrapper {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  background: #ffffff14;
+  width: 380px;
+  text-align: start;
+  padding-inline-end: 40px;
+  border: 2px solid var(--separator-color);
+  box-shadow: 5px 5px #00000052;
+
+  @include mobile {
+    // padding-inline-end: 40px;
+    padding-right: 40px;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .closeButton {
+    @include closeButton;
+    top: 0px;
+    // inset-inline-end: 10px;
+    right: 10px;
+  }
+}

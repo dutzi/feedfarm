@@ -1,0 +1,20 @@
+.wrapper {
+  display: none;
+  .stripe {
+    position: fixed;
+    width: 100vw;
+    height: 100px;
+    z-index: 0;
+    box-shadow: 0px 0px 20px #000000a3 inset;
+
+    &:nth-child(2n) {
+      background-color: var(--feedfarm-primary);
+      transform: translateX(99vw);
+    }
+
+    &:nth-child(2n + 1) {
+      background-color: var(--feedfarm-cyan);
+      transform: translateX(99vw);
+    }
+  }
+}

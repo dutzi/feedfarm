@@ -1,0 +1,26 @@
+@import '../../partials';
+
+.wrapper {
+  .message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7em;
+    min-height: 150px;
+    line-height: 1.8em;
+    text-align: center;
+    //
+    position: relative;
+  }
+}
+
+.childWrapper {
+  opacity: 0;
+  position: absolute;
+}
+
+.hasDimensions {
+  .childWrapper {
+    // transform: scale(0.5);
+  }
+}

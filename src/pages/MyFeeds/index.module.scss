@@ -1,0 +1,32 @@
+@import '../../partials';
+
+.wrapper {
+  max-width: 570px;
+  width: 100%;
+  margin: auto;
+
+  .feeds {
+    .feed {
+      @include elevated-box;
+      @include reset-link;
+      display: block;
+      height: 140px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      .role {
+      }
+
+      .name {
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+    }
+  }
+}
+
+.spinner {
+  margin-top: 24px;
+}
