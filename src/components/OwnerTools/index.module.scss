@@ -1,0 +1,184 @@
+@import '../../partials';
+@import './partials';
+
+$buttonSize: 50px;
+
+.wrapper {
+  position: sticky;
+  top: 80px;
+  z-index: 1;
+
+  &.showSaveChangesWarning {
+    .well {
+      background: #cacaca;
+
+      .toolbar {
+        pointer-events: none;
+        .button {
+          border: 2px solid #888888;
+          background: #cacaca;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .overflowHidden {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .well {
+    width: 70px;
+    position: absolute;
+    border: 2px solid black;
+    box-shadow: 5px 5px #00000033 inset;
+    border-radius: 6px;
+    box-sizing: content-box;
+    // background: #ffffff;
+    background: #2196f3;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+      background: linear-gradient(
+        transparent 39%,
+        #ffffff40 50%,
+        transparent 61%
+      );
+      background-size: 100% 10px;
+      background-repeat: repeat-y;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+      background: linear-gradient(
+        90deg,
+        transparent 39%,
+        #ffffff40 50%,
+        transparent 61%
+      );
+      background-size: 10px 100%;
+      background-repeat: repeat-x;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .toolbar {
+      display: grid;
+
+      grid-gap: 10px;
+      align-items: center;
+      justify-content: center;
+      grid-template-rows: auto auto auto auto;
+      height: auto;
+      padding: 10px;
+      width: $buttonSize + 20px;
+
+      .button {
+        // background: none;
+        // border: none;
+        font-size: 1.5em;
+        width: $buttonSize;
+        height: $buttonSize;
+        border: 2px solid black;
+        border-radius: 6px;
+        background: white;
+        outline: none;
+
+        &.style:focus {
+          box-shadow: 0px 0px 0px 3px $styleColor;
+        }
+
+        &.rules:focus {
+          box-shadow: 0px 0px 0px 3px $rulesColor;
+        }
+
+        &.roles:focus {
+          box-shadow: 0px 0px 0px 3px $rolesColor;
+        }
+
+        &.general:focus {
+          box-shadow: 0px 0px 0px 3px $generalColor;
+        }
+      }
+    }
+
+    .sidebar {
+      .saveButton {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 0px;
+        border: 2px solid black;
+        border-radius: 8px;
+        font-size: 1.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 0px;
+        color: white;
+        background: #03a9f4;
+        box-shadow: 5px 5px #0000005e;
+
+        &[disabled] {
+          background: #cacaca;
+        }
+
+        > i {
+          line-height: 0px;
+        }
+      }
+
+      .unsavedChanges {
+        $unsavedChangesWidth: 200px;
+
+        font-size: 0.8em;
+        color: black;
+        top: 60px;
+        position: absolute;
+        right: -$unsavedChangesWidth - 10px;
+        width: $unsavedChangesWidth;
+        background: #00bcd4;
+        padding: 10px;
+        border: 2px solid black;
+
+        .warning {
+          display: flex;
+          align-items: baseline;
+
+          .text {
+            margin-inline-start: 12px;
+          }
+        }
+
+        .buttons {
+          display: grid;
+          grid-template-columns: 1fr auto auto;
+          grid-gap: 6px;
+          margin-top: 12px;
+
+          .button {
+            @include reset-button;
+            background: white;
+            border-radius: 8px;
+            color: black;
+            padding: 6px 12px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import '../../../../partials';
+
+.wrapper {
+  margin: 6px 0px 12px; // todo - relayout this
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1.5;
+
+  .timestamp {
+    display: inline;
+    margin: 0px;
+  }
+}

@@ -1,0 +1,23 @@
+.wrapper {
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 25px;
+
+  .content {
+    margin-inline-start: 52px;
+
+    .actions {
+      margin-top: 15px;
+      display: flex;
+
+      &:empty {
+        display: none;
+      }
+
+      .borderV {
+        border-right: 2px solid var(--border-color);
+        margin: 6px 12px;
+      }
+    }
+  }
+}

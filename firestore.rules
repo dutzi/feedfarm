@@ -1,0 +1,59 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function prefix() {
+      return /databases/$(database)/documents;
+    }
+
+    function getFeed(feed) {
+    	return get(/$(prefix())/feeds/$(feed)).data
+    }
+
+    function isFeedPublic(feed) {
+      return getFeed(feed).whoCanRead == 'guest';
+    }
+
+    function isFeedForMembers(feed) {
+      return getFeed(feed).whoCanRead == 'member';
+    }
+
+    function isFeedPrivate(feed) {
+      return getFeed(feed).whoCanRead == 'me';
+    }
+
+    function isMemberOfFeed(feed) {
+      return request.auth.uid in getFeed(feed).canReadUIDS;
+    }
+
+    function isCreatorOfFeed(feed) {
+      return getFeed(feed).owners[0].uid == request.auth.uid;
+    }
+
+    function canReadFeed(feed) {
+      return isFeedPublic(feed) ||
+             isFeedForMembers(feed) && isMemberOfFeed(feed) ||
+             isFeedPrivate(feed) && isCreatorOfFeed(feed)
+    }
+
+    match /feeds/{feed} {
+      allow read: if canReadFeed(feed);
+      allow delete: if isCreatorOfFeed(feed);
+    }
+
+    match /feeds/{feed}/posts/{post} {
+      allow read: if canReadFeed(feed);
+    }
+
+    match /feeds/{feed}/posts/{post}/comments/{comment} {
+      allow read: if canReadFeed(feed);
+    }
+
+    match /users/{uid} {
+    	allow read: if uid == request.auth.uid
+    }
+
+    match /{document=**} {
+    	allow read, write: if request.auth.uid == 'peNEXtLHb0VkYNWe1lGkwQ1Jo0C3'
+    }
+  }
+}

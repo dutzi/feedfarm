@@ -1,0 +1,13 @@
+@import '../../mixins.scss';
+@import '../../partials';
+
+.wrapper {
+  max-width: 1024px;
+  width: calc(100vw - 30px);
+  margin: auto;
+  @include clear-panel;
+}
+.emptyState {
+  margin: 24px 0px;
+  font-size: 1.2em;
+}

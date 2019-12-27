@@ -1,0 +1,21 @@
+.useCurrentLanguage {
+  direction: ltr;
+
+  .languageList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .actions {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .comingSoon {
+    padding: 2em;
+    font-size: 2em;
+    text-align: center;
+  }
+}

@@ -1,0 +1,22 @@
+@import '../../partials';
+
+.colorsMatcher {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+
+  .color {
+    position: absolute;
+    top: 0px;
+    border: 2px solid black;
+    left: 0px;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+
+    &:after {
+      content: attr(data-luminosity);
+    }
+  }
+}

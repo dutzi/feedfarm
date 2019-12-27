@@ -1,0 +1,13 @@
+@import '../../partials';
+
+.label {
+  font-size: var(--font-size-lg);
+  margin-inline-end: 12px;
+  width: 190px;
+  display: inline-block;
+
+  @include mobile {
+    margin-inline-end: 0px;
+    margin-bottom: 12px;
+  }
+}

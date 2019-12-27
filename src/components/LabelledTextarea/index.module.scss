@@ -1,0 +1,29 @@
+@import '../../partials';
+
+.wrapper {
+  display: flex;
+  align-items: baseline;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  .textarea {
+    height: 150px;
+    border: none;
+    padding: 10px;
+    font-size: var(--font-size-lg);
+    border-radius: var(--border-radius-md);
+    color: var(--text-color-default);
+    resize: none;
+    font-family: inherit;
+    background: #0000006b;
+    border: 2px solid black;
+    box-shadow: var(--input-box-shadow);
+
+    &:focus {
+      outline: none;
+      box-shadow: var(--focus-rect);
+    }
+  }
+}

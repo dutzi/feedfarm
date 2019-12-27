@@ -1,0 +1,36 @@
+@import '../../../../partials';
+
+.wrapper {
+  .spinner {
+    height: 15px;
+    margin: 12px;
+  }
+
+  .showMoreCommentsSpinner {
+    height: 15px;
+    margin: 3px;
+  }
+
+  .noComment {
+    height: 33px;
+    display: flex;
+    align-items: center;
+    padding: 0px 3px;
+  }
+
+  .showMoreCommentsButton {
+    width: 100%;
+    padding: 10px;
+    font-size: inherit;
+    font-family: inherit;
+    border: none;
+    background: none;
+    text-align: start;
+    color: var(--text-color-amplified);
+    font-size: 0.8em;
+  }
+
+  .commentsList {
+    overflow: hidden;
+  }
+}

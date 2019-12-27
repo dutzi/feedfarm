@@ -1,0 +1,25 @@
+@import '../../../../partials';
+
+.wrapper {
+  padding: 10px;
+  // background: #313131;
+  margin-bottom: 6px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 9px;
+  word-break: break-word;
+
+  .userPhoto {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #101010;
+  }
+
+  .message {
+    white-space: pre-wrap;
+  }
+
+  .timestamp {
+    margin: 6px 0px 0px;
+  }
+}

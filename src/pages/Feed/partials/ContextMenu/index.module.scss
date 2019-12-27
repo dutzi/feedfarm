@@ -1,0 +1,90 @@
+@import '../../../../partials';
+
+.wrapper {
+  @include mobile {
+    display: none;
+  }
+
+  .button {
+    background: none;
+    border: none;
+    font-size: inherit;
+    outline: none;
+    align-self: flex-start;
+    display: flex;
+
+    &.menuButton {
+      padding: 12px 16px;
+      margin: -10px;
+      color: var(--context-menu-color);
+    }
+
+    &:not(.menuButton) i:first-child {
+      position: absolute;
+      -webkit-text-stroke: 8px var(--post-bg);
+      z-index: -1;
+    }
+
+    i {
+      pointer-events: none;
+    }
+
+    &:focus-visible {
+      i:nth-child(2) {
+        color: var(--context-menu-highlight-color);
+      }
+    }
+
+    .label {
+      position: absolute;
+      margin-inline-start: 44px;
+      color: var(--context-menu-label-color);
+      pointer-events: none;
+      opacity: 0;
+      transform: translateX(-20px);
+      width: 100px;
+      text-align: start;
+    }
+  }
+
+  &.showSpinner {
+    .menuButton {
+      i {
+        opacity: 0;
+      }
+    }
+  }
+
+  .menuItemButtons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 12px;
+    margin-inline-start: -6px;
+    pointer-events: none;
+    z-index: 1;
+
+    .button {
+      opacity: 0;
+      transform: translateY(-20px);
+      margin-bottom: 12px;
+
+      i:nth-child(2) {
+        color: var(--context-menu-color);
+        // text-shadow: 0px 0px 12px #0000009e;
+      }
+
+      &:hover,
+      &:focus {
+        i:nth-child(2) {
+          color: var(--context-menu-highlight-color);
+        }
+      }
+    }
+  }
+
+  .spinner {
+    position: absolute;
+    margin-inline-start: -6px;
+  }
+}

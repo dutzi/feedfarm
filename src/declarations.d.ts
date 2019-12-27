@@ -1,0 +1,9 @@
+declare module 'uuid/v1';
+declare module 'sha1';
+declare module 'feedfarm-shared/utils';
+declare module 'react-merge-refs';
+declare module 'is-gibberish';
+declare module 'crypto-random-string';
+declare module 'unflatten';
+declare module 'react-odometerjs';
+declare module 'nice-color-palettes';

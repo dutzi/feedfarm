@@ -1,0 +1,31 @@
+@import '../../partials';
+
+.wrapper {
+  line-height: 0px;
+
+  i:first-child {
+    position: absolute;
+    -webkit-text-stroke: 4px var(--border-color);
+  }
+
+  i:nth-child(2) {
+    position: absolute;
+  }
+
+  i:nth-child(3) {
+    opacity: 0;
+  }
+
+  &.shadow,
+  &.emblem {
+    i:nth-child(2) {
+      margin-top: -1px;
+    }
+  }
+
+  &.emblem {
+    i:first-child {
+      -webkit-text-stroke: 4px #0000006b;
+    }
+  }
+}

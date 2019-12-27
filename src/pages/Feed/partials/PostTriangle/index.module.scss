@@ -1,0 +1,14 @@
+@import '../../../../partials';
+
+.wrapper {
+  position: absolute;
+  left: 0px;
+  top: 8px;
+  transform: translateX(-100%);
+
+  @include rtl {
+    left: initial;
+    right: 0px;
+    transform: translateX(100%);
+  }
+}

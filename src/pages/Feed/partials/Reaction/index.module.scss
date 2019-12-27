@@ -1,0 +1,29 @@
+@import '../../../../partials';
+
+.wrapper {
+  background: #ffffff1f;
+  font-size: 0.8em;
+  font-family: inherit;
+  color: white;
+  margin-inline-end: 6px;
+  margin-bottom: 6px;
+  border: none;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  outline: none;
+
+  .count {
+    display: inline-block;
+    margin-inline-start: 4px;
+  }
+
+  > i:nth-child(2) {
+    margin-inline-start: 4px;
+    font-size: 0.7em;
+  }
+
+  &:focus {
+    box-shadow: var(--focus-rect);
+  }
+}

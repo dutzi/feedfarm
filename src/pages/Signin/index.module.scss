@@ -1,0 +1,52 @@
+.wrapper {
+  background: var(--bg-color);
+
+  .form {
+    width: 480px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: calc(100vw - 48px);
+
+    .formField {
+      margin-bottom: 12px;
+    }
+
+    .formSubmit {
+      align-self: flex-end;
+      background: white;
+      padding: 10px 30px;
+      border-radius: 6px;
+      font-size: var(--font-size-md);
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      display: inline-block;
+      border: none;
+
+      &:focus {
+        outline: none;
+        box-shadow: var(--focus-rect);
+      }
+    }
+
+    .errorMessage {
+      background: var(--color-red);
+      padding: 10px;
+      border-radius: var(--border-radius-md);
+      margin-top: 30px;
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+
+  .resetPasswordWrapper {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 480px;
+    width: calc(100vw - 48px);
+    margin: auto;
+  }
+}

@@ -1,0 +1,21 @@
+@import '../../partials';
+
+.wrapper {
+  line-height: 1.5;
+  max-width: 1024px;
+  width: calc(100vw - 30px);
+  margin: auto;
+  @include clear-panel;
+  color: white;
+  direction: ltr;
+
+  h2 {
+    color: inherit;
+    margin: 20px 0px;
+    font-size: 1.6em;
+  }
+
+  a {
+    color: white;
+  }
+}

@@ -1,0 +1,67 @@
+@import '../../../../partials';
+
+.wrapper {
+  padding: 4px 0px;
+  margin-bottom: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 6px;
+
+  .reactionButton {
+    background: var(--contrasting-bg);
+    font-size: 0.8em;
+    font-family: inherit;
+    color: var(--text-color-amplified);
+    margin-inline-end: 6px;
+    margin-bottom: 6px;
+    border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    outline: none;
+
+    .count {
+      display: inline-block;
+      margin-inline-start: 4px;
+    }
+
+    > i:nth-child(2) {
+      margin-inline-start: 4px;
+      font-size: 0.7em;
+    }
+
+    &:focus {
+      box-shadow: var(--focus-rect);
+    }
+  }
+
+  .addReactionButton {
+    padding: 5px 8px;
+  }
+
+  .pickerWrapper {
+    position: absolute;
+    // top: 30px;
+    bottom: 33px;
+    transform-origin: 0 0;
+    z-index: 1;
+  }
+
+  &.isSticky .pickerWrapper {
+    transform: scale(2);
+  }
+
+  .pickerButtonWrapper {
+    display: flex;
+    position: relative;
+  }
+
+  .spinner {
+    margin: 0px 2px;
+    line-height: 0px;
+  }
+
+  .addReactionButton .spinner {
+    margin-inline-start: 7px;
+  }
+}

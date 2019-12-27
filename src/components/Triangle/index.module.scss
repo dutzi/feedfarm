@@ -1,0 +1,10 @@
+@import '../../partials';
+
+.wrapper {
+  transform-origin: 100% 0;
+  svg {
+    @include rtl {
+      transform: scaleX(-1);
+    }
+  }
+}

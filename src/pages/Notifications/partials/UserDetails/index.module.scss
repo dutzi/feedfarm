@@ -1,0 +1,15 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  outline: none;
+  color: inherit;
+  text-decoration: none;
+
+  .profilePhoto {
+    margin-inline-end: 12px;
+  }
+
+  .username {
+    font-weight: bold;
+  }
+}

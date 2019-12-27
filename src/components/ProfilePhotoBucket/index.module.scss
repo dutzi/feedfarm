@@ -1,0 +1,129 @@
+@import '../../partials';
+
+.wrapper {
+  width: 80px;
+  height: 80px;
+  font-size: 30px;
+  background-color: var(--bg-color-muted);
+  color: var(--bg-color-x-muted);
+  margin-inline-end: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px #00000052;
+  cursor: pointer;
+
+  &:not(.avatar) {
+    border: 2px solid black;
+  }
+
+  @include mobile {
+    margin-inline-end: 0px;
+    margin-bottom: 12px;
+  }
+
+  &:last-child {
+    margin-inline-end: 0px;
+  }
+
+  .plusIcon {
+    position: absolute;
+  }
+
+  .focusRect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+  }
+
+  .input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    z-index: 1;
+
+    &:focus + .focusRect {
+      box-shadow: var(--focus-rect);
+      outline: none;
+    }
+  }
+
+  .removeButton {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--feedfarm-primary);
+    border-radius: var(--border-radius-md);
+    color: var(--text-color-default);
+    font-size: inherit;
+    border: none;
+    opacity: 0;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    @include mobile {
+      opacity: 1;
+      right: 10px;
+      bottom: 10px;
+      width: 30px;
+      height: 30px;
+      font-size: 0.6em;
+      top: auto;
+      left: auto;
+    }
+  }
+
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .spinner {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .overlay {
+    position: absolute;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    background: #0000007a;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+
+    .label {
+      font-size: 0.5em;
+    }
+  }
+
+  &:hover {
+    .overlay {
+      opacity: 1;
+    }
+  }
+}

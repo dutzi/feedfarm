@@ -1,0 +1,48 @@
+@import '../../partials';
+
+.wrapper {
+  .backdrop {
+    @include backdrop;
+    z-index: 1000;
+    opacity: 0;
+  }
+
+  .content {
+    position: fixed;
+    top: 100px;
+    left: calc(50% - 320px);
+    width: 640px;
+    padding: 24px;
+    background: var(--bg-color);
+    border: 2px solid black;
+    box-shadow: 5px 5px 0px black;
+    z-index: 1001;
+    opacity: 0;
+
+    .header {
+      padding-bottom: 12px;
+      display: flex;
+      border-bottom: 2px solid var(--border-color);
+      margin-bottom: 15px;
+
+      .title {
+        font-weight: 600;
+        font-size: 1.2em;
+      }
+
+      .closeButton {
+        @include closeButton;
+        top: 12px;
+      }
+    }
+
+    @include mobile {
+      width: 90%;
+      left: 5%;
+    }
+  }
+
+  &.controlledAnimation .content {
+    opacity: 0;
+  }
+}

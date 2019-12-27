@@ -1,0 +1,24 @@
+@import '../../partials';
+
+.wrapper {
+  padding: 15px;
+
+  @include mobile {
+    padding: 0px;
+  }
+
+  .title {
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+
+  .body {
+    margin-bottom: 25px;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-column-gap: 10px;
+  }
+}
