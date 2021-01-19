@@ -1,41 +1,33 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import cx from 'classnames';
 import styles from './index.module.scss';
 import Spinner from '../../../../components/Spinner';
-import { useTranslation } from 'react-i18next';
 import gsap from 'gsap';
-import { IFeedItem } from '@feedfarm-shared/types';
-import useCurrentUser from '../../../../hooks/use-current-user';
-import useFeed from '../../../../hooks/use-feed';
-import useIsCurrentUserAdmin from '../../../../hooks/use-is-current-user-admin';
 
-export type TAction = 'delete' | 'ban' | 'edit' | 'view-in-db';
-interface IButtonData {
-  id: TAction;
+export type TAction = string;
+
+export interface IItemData<T extends TAction> {
+  id: T;
   icon: string;
   label: string;
 }
 
-export default function ContextMenu({
-  feedItem,
+export default function ContextMenu<T extends TAction>({
+  items,
   showSpinner,
   onClick,
 }: {
-  feedItem: IFeedItem;
+  items: IItemData<T>[];
   showSpinner?: boolean;
-  onClick: (action: TAction) => void;
+  onClick: (action: T) => void;
 }) {
   const menuButtons = useRef<HTMLDivElement>(null);
   const timeout = useRef<NodeJS.Timeout>();
   const isShowingMenu = useRef(false);
-  const { t } = useTranslation();
-  const [currentUser] = useCurrentUser();
-  const feed = useFeed();
-  const isMeAdmin = useIsCurrentUserAdmin();
   const timelines = useRef<gsap.core.Timeline[]>([]);
 
   function pauseAllTimelines() {
-    timelines.current.forEach(timeline => timeline.pause());
+    timelines.current.forEach((timeline) => timeline.pause());
   }
 
   function handleMouseOver(e: React.MouseEvent | React.FocusEvent) {
@@ -104,7 +96,7 @@ export default function ContextMenu({
     timeout.current = setTimeout(hideButtons, 250);
   }
 
-  function hideButtons() {
+  const hideButtons = useCallback(() => {
     const buttons = menuButtons.current?.querySelectorAll('button');
 
     if (buttons) {
@@ -125,52 +117,15 @@ export default function ContextMenu({
     }
 
     isShowingMenu.current = false;
-  }
+  }, []);
 
   useEffect(() => {
     if (showSpinner) {
       hideButtons();
     }
-  }, [showSpinner]);
+  }, [hideButtons, showSpinner]);
 
-  const buttonsData: IButtonData[] = [];
-
-  const isMeAuthor = feedItem.uid === currentUser?.id;
-  const isMeOwner = feed?.owners.find(user => user.uid === currentUser?.id);
-  const isMeModerator = feed?.moderators.find(
-    user => user.uid === currentUser?.id,
-  );
-
-  // if (isMeAdmin || isMeAuthor) {
-  //   buttonsData.push({
-  //     id: 'edit',
-  //     icon: 'pencil-alt',
-  //     label: t('Edit'),
-  //   });
-  // }
-  if (isMeAuthor || isMeModerator || isMeOwner || isMeAdmin) {
-    buttonsData.push({
-      id: 'delete',
-      icon: 'trash',
-      label: t('Delete'),
-    });
-  }
-  if ((isMeAdmin || isMeOwner || isMeModerator) && !isMeAuthor) {
-    buttonsData.push({
-      id: 'ban',
-      icon: 'ban',
-      label: t('Ban User'),
-    });
-  }
-  if (isMeAdmin) {
-    buttonsData.push({
-      id: 'view-in-db',
-      icon: 'database',
-      label: t('View In DB'),
-    });
-  }
-
-  if (!buttonsData.length) {
+  if (!items.length) {
     return null;
   }
 
@@ -196,18 +151,18 @@ export default function ContextMenu({
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
       >
-        {buttonsData.map(button => (
+        {items.map((item) => (
           <button
-            key={button.id}
+            key={item.id}
             onFocus={handleMouseOver}
             onBlur={handleMouseOut}
             className={styles.button}
-            onClick={onClick.bind(null, button.id)}
+            onClick={onClick.bind(null, item.id)}
             data-button
           >
-            <i className={`fa fa-${button.icon}`} />
-            <i className={`fa fa-${button.icon}`} />
-            <div className={styles.label}>{button.label}</div>
+            <i className={`fa fa-${item.icon}`} />
+            <i className={`fa fa-${item.icon}`} />
+            <div className={styles.label}>{item.label}</div>
           </button>
         ))}
       </div>

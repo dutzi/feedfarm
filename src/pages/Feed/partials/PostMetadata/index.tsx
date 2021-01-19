@@ -2,9 +2,10 @@ import React from 'react';
 import { TFeedItemType, IFeedItem } from '@feedfarm-shared/types';
 import styles from './index.module.scss';
 import TimeAgo from '../../../Notifications/partials/TimeAgo';
-import { useTranslation } from 'react-i18next';
 import ContextMenu, { TAction } from '../ContextMenu';
 import useUserLink from '../../hooks/use-user-link';
+import { usePostContextMenuItems } from '../Post/use-post-context-menu-items';
+import { useTranslation } from 'react-i18next';
 
 export default function PostMetadata({
   item,
@@ -20,6 +21,7 @@ export default function PostMetadata({
   const { t } = useTranslation();
 
   const userLink = useUserLink(item.username, item.uid);
+  const postContextMenuItems = usePostContextMenuItems({ feedItem: item });
 
   function getPostTypeDescription(type: TFeedItemType) {
     switch (type) {
@@ -39,7 +41,7 @@ export default function PostMetadata({
       {isSticky && <i className="fa fa-thumbtack" />}
       {!isSticky && (
         <ContextMenu
-          feedItem={item}
+          items={postContextMenuItems}
           onClick={onContextMenuSelect}
           showSpinner={showContextMenuSpinner}
         />
