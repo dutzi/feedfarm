@@ -56,7 +56,7 @@
     "lodash.sortby": "^4.7.0",
     "lodash.times": "^4.3.2",
     "nice-color-palettes": "^3.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "random-item": "^3.0.0",
     "react": "^16.10.2",
     "react-autosize-textarea": "^7.0.0",
